@@ -129,7 +129,10 @@ plt1 <- ggplot(oneLayerDF, aes(x = Neurons, y = Average_Accuracy*100,color=Avera
   labs(title="Finding the Optimal Network Configuration for a Single Layer Neural Network",
        subtitle = "Models are retrained 10 times with randomly split training (70%) and test (30%) data.\n
        The optimal number of neurons for a single layer network appears to be between 20 and 30.") +
-  scale_color_continuous(name="Accuracy (%)")
+  scale_color_continuous(name="Accuracy (%)") + theme(axis.text = element_text(size = 12), 
+                                                      axis.title = element_text(size = 12),
+                                                      plot.title = element_text(size = 15),
+                                                      plot.subtitle = element_text(size = 10))
 
 plt2 <- ggplot(twoLayerDF, aes(x = first_layer, y = second_layer,fill=Average_Accuracy*100,size=Average_Accuracy*100)) + 
   geom_point(shape=21) + scale_size(name = "Prediction Accuracy (%)", range = c(1,9)) +
@@ -138,7 +141,11 @@ plt2 <- ggplot(twoLayerDF, aes(x = first_layer, y = second_layer,fill=Average_Ac
        subtitle = "Randomly selected 100 different Two Layer Configurations and retrained them 10 times
        with randomly split training (70%) and test (30%) data.\n
        For a two layer model, in general, best performance seems to be achieved with the first layer containing 
-       more neurons than the second layer.") + scale_fill_continuous(name="Prediction Accuracy (%)")
+       more neurons than the second layer.") + scale_fill_continuous(name="Prediction Accuracy (%)") +
+  theme(axis.text = element_text(size = 12), 
+        axis.title = element_text(size = 12),
+        plot.title = element_text(size = 15),
+        plot.subtitle = element_text(size = 10))
 
 show(plt1)
 show(plt2)
