@@ -1,4 +1,4 @@
-# This script is intending to find an optimal number of neurons in a two layer neural net
+# This script is intending to find an optimal number of neurons in a one or two layer neural net
 
 library(neuralnet)
 library(caret)
