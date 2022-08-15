@@ -1,7 +1,6 @@
 
 
 library(neuralnet)
-library(caret)
 library(tidyverse)
 
 # read in the dataset
@@ -49,6 +48,7 @@ lived.actual[which(test.data$Mortality == 0)] <- "Died"
 
 comparison <- data.frame(list(predicted=lived.prediction,actual=lived.actual))
 
+library(caret)
 # Calculates statistics for the model performance
 cm = confusionMatrix(as.factor(comparison$predicted), as.factor(comparison$actual))
 print(cm)

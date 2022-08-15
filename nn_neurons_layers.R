@@ -127,7 +127,7 @@ library(ggplot2)
 plt1 <- ggplot(oneLayerDF, aes(x = Neurons, y = Average_Accuracy*100,color=Average_Accuracy*100)) + geom_point() +
   xlab("# of Neurons in a Single Layer Neural Network") + ylab("Average Prediction Accuracy (%)") +
   labs(title="Finding the Optimal Network Configuration for a Single Layer Neural Network",
-       subtitle = "Models are retrained 10 times with randomly split training (70%) and test (30%) data.\n
+       subtitle = "Each model configuration is retrained 10 times with randomly split training (70%) and test (30%) data.\n
        The optimal number of neurons for a single layer network appears to be between 20 and 30.") +
   scale_color_continuous(name="Accuracy (%)") + theme(axis.text = element_text(size = 12), 
                                                       axis.title = element_text(size = 12),
